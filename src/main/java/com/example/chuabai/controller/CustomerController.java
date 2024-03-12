@@ -18,6 +18,7 @@ import java.util.Optional;
 public class CustomerController {
     @Autowired
     private CustomerService customerService;
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorMsg> handleException(Exception ex) {
         return new ResponseEntity<>(new ErrorMsg(ex.getMessage(), "500"), HttpStatus.INTERNAL_SERVER_ERROR);
